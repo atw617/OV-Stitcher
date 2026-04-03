@@ -19,7 +19,7 @@ python datasets/cvt_coco_object.py PATH_TO_COCO_STUFF164K -o PATH_TO_COCO164K
 ```
 
 ## 📊Results
-| Dataset | OpenAI CLIP ViT-B/16 | OpenAI CLIP ViT-L/14 |
+| Dataset | ViT-B/16 | ViT-L/14 |
 |--------|-------------------|-------------------|
 | VOC21 | **75.7** | **74.0** |
 | Context60 | **43.9** | **43.4** |
