@@ -18,5 +18,20 @@ The COCO Object dataset can be converted from COCO Stuff164k by executing the fo
 python datasets/cvt_coco_object.py PATH_TO_COCO_STUFF164K -o PATH_TO_COCO164K
 ```
 
+## 📊Results
+| Dataset | OV-Stitcher (Ours) |
+|--------|-------------------|
+| **With background category** | |
+| VOC21 | **75.7** |
+| Context60 | **43.9** |
+| Object | **42.6** |
+| **Without background category** | |
+| VOC20 | **89.8** |
+| City | **48.1** |
+| Context59 | **48.8** |
+| ADE20K | **24.7** |
+| Stuff | **31.8** |
+| **Avg.** | **50.7** |
+
 ## Code
 Code will be released soon.
