@@ -1,6 +1,6 @@
 <div align="center">
 
-# OV-Stitcher: A Global Context-Aware Framework for Training-Free Open-Vocabulary Semantic Segmentation 
+# 🪡 OV-Stitcher: A Global Context-Aware Framework for Training-Free Open-Vocabulary Semantic Segmentation 
 <div>
     <a href='#' target='_blank'>Seungjae Moon</a><sup></sup>&emsp;
     <a href='#' target='_blank'>Seunghyun Oh</a><sup></sup>&emsp;
@@ -43,3 +43,26 @@ python datasets/cvt_coco_object.py PATH_TO_COCO_STUFF164K -o PATH_TO_COCO164K
 
 ## Code
 Code will be released soon.
+
+## 📌 Citation
+```bibtex
+@article{moon2026ovstitcher,
+  title={OV-Stitcher: A Global Context-Aware Framework for Training-Free Open-Vocabulary Semantic Segmentation},
+  author={Moon, Seungjae and Oh, Seunghyun and Ro, Youngmin},
+  journal={arXiv preprint arXiv:2604.08110},
+  year={2026}
+}
+```
+
+## 🙏 Acknowledgement
+
+This project builds upon several excellent open-source efforts:
+
+- [SCLIP](https://github.com/wangf3014/SCLIP)
+- [ProxyCLIP](https://github.com/mc-lan/ProxyCLIP)
+- [CorrCLIP](https://github.com/zdk258/CorrCLIP)
+- [SAM 2](https://github.com/facebookresearch/sam2)
+
+We sincerely thank the authors for making their work publicly available.
+
+
