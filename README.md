@@ -10,6 +10,9 @@
 <div>
     <strong>[CVPR 2026 Findings]</strong>
 </div>
+
+[![Paper](https://img.shields.io/badge/ArXiv-2411.10086-red?style=flat-square)](https://arxiv.org/abs/2604.08110)
+
 </div>
 
 ## 📄Overview
