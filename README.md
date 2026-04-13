@@ -37,7 +37,7 @@ python datasets/cvt_coco_object.py PATH_TO_COCO_STUFF164K -o PATH_TO_COCO164K
    <img src="assets/quantitative.png" alt="quantitative results"/>
 </div>
 
-
+ 
 
 | Model | VOC21 | Context60 | Object | VOC20 | City | Context59 | ADE20K | Stuff | Avg. |
 |------|------|-----------|--------|-------|------|-----------|--------|-------|------|
