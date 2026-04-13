@@ -37,13 +37,6 @@ python datasets/cvt_coco_object.py PATH_TO_COCO_STUFF164K -o PATH_TO_COCO164K
    <img src="assets/quantitative.png" alt="quantitative results"/>
 </div>
 
- 
-
-| Model | VOC21 | Context60 | Object | VOC20 | City | Context59 | ADE20K | Stuff | Avg. |
-|------|------|-----------|--------|-------|------|-----------|--------|-------|------|
-| ViT-B/16 | **75.7** | **43.9** | **42.6** | **89.8** | **48.1** | **48.8** | **24.7** | **31.8** | **50.7** |
-| ViT-L/14 | **74.0** | **43.4** | **46.5** | **90.2** | **50.6** | **48.6** | **27.7** | **31.6** | **51.6** |
-
 <div>
    <img src="assets/qualitative.png" alt="qualitative" width=100%/>
 </div>
