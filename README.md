@@ -39,7 +39,7 @@ python datasets/cvt_coco_object.py PATH_TO_COCO_STUFF164K -o PATH_TO_COCO164K
 | ViT-L/14 | **74.0** | **43.4** | **46.5** | **90.2** | **50.6** | **48.6** | **27.7** | **31.6** | **51.6** |
 
 <div>
-   <img src="assets/qualitative.jpeg" alt="qualitative" width=100%/>
+   <img src="assets/qualitative.pngg" alt="qualitative" width=100%/>
 </div>
 
 ## Code
