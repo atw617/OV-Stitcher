@@ -17,7 +17,7 @@
 
 ## 📄Overview
 <div align="center">
-   <img src="assets/overview.png" alt="OV-Stitcehr Framework"/>
+   <img src="assets/overview.png"/>
 </div>
 
 > **Abstract**: Training-free open-vocabulary semantic segmentation (TFOVSS) has recently attracted attention for its ability to perform dense prediction by leveraging the pretrained knowledge of large vision and vision–language models, without requiring additional training. However, due to the limited input resolution of these pretrained encoders, existing TFOVSS methods commonly adopt a sliding-window strategy that processes cropped sub-images independently. While effective for managing high-resolution inputs, this approach prevents global attention over the full image, leading to fragmented feature representations and limited contextual reasoning. We propose OV-Stitcher, a training-free framework that addresses this limitation by stitching fragmented sub-image features directly within the final encoder block. By reconstructing attention representations from fragmented sub-image features, OV-Stitcher enables global attention within the final encoder block, producing coherent context aggregation and spatially consistent, semantically aligned segmentation maps. Extensive evaluations across eight benchmarks demonstrate that OV-Stitcher establishes a scalable and effective solution for open-vocabulary segmentation, achieving a notable improvement in mean Intersection over Union (mIoU) from 48.7 to 50.7 compared with prior training-free baselines.
@@ -37,11 +37,11 @@ python datasets/cvt_coco_object.py PATH_TO_COCO_STUFF164K -o PATH_TO_COCO164K
 
 ## 📊Results
 <div align="center">
-   <img src="assets/quantitative.png" alt="quantitative results"/>
+   <img src="assets/quantitative.png"/>
 </div>
 
 <div>
-   <img src="assets/qualitative.png" alt="qualitative" width=100%/>
+   <img src="assets/qualitative.png" width=100%/>
 </div>
 
 ## Code
