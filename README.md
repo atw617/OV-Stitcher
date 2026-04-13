@@ -34,7 +34,7 @@ python datasets/cvt_coco_object.py PATH_TO_COCO_STUFF164K -o PATH_TO_COCO164K
 
 ## 📊Results
 <div align="center">
-   <img src="assets/quantitativ.png" alt="quantitative results"/>
+   <img src="assets/quantitative.png" alt="quantitative results"/>
 </div>
 
 
