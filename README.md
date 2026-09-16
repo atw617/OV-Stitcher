@@ -12,6 +12,7 @@
 </div>
 
 [![Paper](https://img.shields.io/badge/ArXiv-2411.10086-red?style=flat-square)](https://arxiv.org/abs/2604.08110)
+[![CVPR](https://shields.io)](https://openaccess.thecvf.com/content/CVPR2026F/papers/Moon_OV-Stitcher_A_Global_Context-Aware_Framework_for_Training-Free_Open_Vocabulary_Semantic_CVPRF_2026_paper.pdf)
 
 </div>
 
@@ -54,6 +55,15 @@ Code will be released soon.
   author={Moon, Seungjae and Oh, Seunghyun and Ro, Youngmin},
   journal={arXiv preprint arXiv:2604.08110},
   year={2026}
+}
+
+@InProceedings{Moon_2026_CVPR,
+    author    = {Moon, Seungjae and Oh, Seunghyun and Ro, Youngmin},
+    title     = {OV-Stitcher: A Global Context-Aware Framework for Training-Free Open Vocabulary Semantic Segmentation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Findings},
+    month     = {June},
+    year      = {2026},
+    pages     = {7357-7367}
 }
 ```
 
