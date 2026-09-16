@@ -12,7 +12,7 @@
 </div>
 
 [![Paper](https://img.shields.io/badge/ArXiv-2411.10086-red?style=flat-square)](https://arxiv.org/abs/2604.08110)
-[![CVPR](https://shields.io)](https://openaccess.thecvf.com/content/CVPR2026F/papers/Moon_OV-Stitcher_A_Global_Context-Aware_Framework_for_Training-Free_Open_Vocabulary_Semantic_CVPRF_2026_paper.pdf)
+[![CVPR](https://shields.io)(https://openaccess.thecvf.com/content/CVPR2026F/papers/Moon_OV-Stitcher_A_Global_Context-Aware_Framework_for_Training-Free_Open_Vocabulary_Semantic_CVPRF_2026_paper.pdf)]
 
 </div>
 
