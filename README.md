@@ -67,6 +67,24 @@ With the default `mask_generator=None`, every validation image also needs a prec
 `Without background class`: VOC20, PC59 (i.e., VOC21 and PC60 without the background category), Cityscapes (City), ADE20k (ADE), and COCO Stuff164k (Stuff).
 
 
+## Evaluation
+
+Run these commands from the repository root after preparing the data:
+
+```bash
+# One GPU (example: GPU 0, VOC21)
+CUDA_VISIBLE_DEVICES=0 python eval.py --config configs/cfg_voc21.py
+
+# Two GPUs, one dataset
+CUDA_VISIBLE_DEVICES=0,1 bash dist_test.sh configs/cfg_voc21.py 2
+
+# All eight configs, sequentially on one GPU
+CUDA_VISIBLE_DEVICES=0 python eval_all.py
+```
+
+Replace `cfg_voc21.py` with any config listed above. Results are saved in `work_dirs/`, `results.xlsx`, and `111.txt`. Model choices and the prompt file are set in `configs/base_config.py`; the default prompt is `prompts/class_biased_template.json`. Alternative mask generators require their own dependencies and weights.
+
+
 ## 📊Results
 <div align="center">
    <img src="assets/quantitative.png"/>
@@ -75,9 +93,6 @@ With the default `mask_generator=None`, every validation image also needs a prec
 <div>
    <img src="assets/qualitative.png" width=100%/>
 </div>
-
-## Code
-Code will be released soon.
 
 ## 📌 Citation
 ```bibtex
