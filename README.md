@@ -23,7 +23,43 @@
 
 > **Abstract**: Training-free open-vocabulary semantic segmentation (TFOVSS) has recently attracted attention for its ability to perform dense prediction by leveraging the pretrained knowledge of large vision and vision–language models, without requiring additional training. However, due to the limited input resolution of these pretrained encoders, existing TFOVSS methods commonly adopt a sliding-window strategy that processes cropped sub-images independently. While effective for managing high-resolution inputs, this approach prevents global attention over the full image, leading to fragmented feature representations and limited contextual reasoning. We propose OV-Stitcher, a training-free framework that addresses this limitation by stitching fragmented sub-image features directly within the final encoder block. By reconstructing attention representations from fragmented sub-image features, OV-Stitcher enables global attention within the final encoder block, producing coherent context aggregation and spatially consistent, semantically aligned segmentation maps. Extensive evaluations across eight benchmarks demonstrate that OV-Stitcher establishes a scalable and effective solution for open-vocabulary segmentation, achieving a notable improvement in mean Intersection over Union (mIoU) from 48.7 to 50.7 compared with prior training-free baselines.
 
+
+## Installation
+
+Tested on Linux with Python 3.10, PyTorch 2.1.0, CUDA 12.1, and MMCV 2.1.0. From the repository root:
+
+```bash
+conda create -n ov-stitcher python=3.10 -y
+conda activate ov-stitcher
+python -m pip install torch==2.1.0 torchvision==0.16.0 --index-url https://download.pytorch.org/whl/cu121
+python -m pip install -r requirements.txt
+python -m pip install --only-binary=mmcv mmcv==2.1.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html
+```
+
+The repository contains its own `mmengine`, `mmseg`, and modified `open_clip` packages. PyTorch and MMCV are installed separately to match the CUDA build ([PyTorch wheels](https://pytorch.org/get-started/previous-versions/), [MMCV installation](https://mmcv.readthedocs.io/en/2.x/get_started/installation.html)). The default CLIP and DINO weights are downloaded on first use.
+
 ## ⚙️Datasets
+
+Place the validation datasets under `data/` (or symlink `data` to a prepared dataset directory). Paths below are relative to the repository root:
+
+| Configs | Images | Ground truth | Split file |
+| --- | --- | --- | --- |
+| `cfg_voc20.py`, `cfg_voc21.py` | `data/VOCdevkit/VOC2012/JPEGImages/*.jpg` | `data/VOCdevkit/VOC2012/SegmentationClass/*.png` | `data/VOCdevkit/VOC2012/ImageSets/Segmentation/val.txt` |
+| `cfg_context59.py`, `cfg_context60.py` | `data/VOCdevkit/VOC2010/JPEGImages/*.jpg` | `data/VOCdevkit/VOC2010/SegmentationClassContext/*.png` | `data/VOCdevkit/VOC2010/ImageSets/SegmentationContext/val.txt` |
+| `cfg_ade20k.py` | `data/ADEChallengeData2016/images/validation/*.jpg` | `data/ADEChallengeData2016/annotations/validation/*.png` | — |
+| `cfg_city_scapes.py` | `data/cityscapes/leftImg8bit/val/<city>/*_leftImg8bit.png` | `data/cityscapes/gtFine/val/<city>/*_gtFine_labelTrainIds.png` | — |
+| `cfg_coco_object.py` | `data/coco_object/images/val2017/*.jpg` | `data/coco_object/annotations/val2017/*_instanceTrainIds.png` | — |
+| `cfg_coco_stuff164k.py` | `data/coco_stuff164k/images/val2017/*.jpg` | `data/coco_stuff164k/annotations/val2017/*_labelTrainIds.png` | — |
+
+To create the COCO Object labels from a complete COCO Stuff 164k dataset, run:
+
+```bash
+python datasets/cvt_coco_object.py data/coco_stuff164k -o data/coco_object
+```
+
+With the default `mask_generator=None`, every validation image also needs a precomputed instance mask at `data/region_masks/{voc,context,ade,city,coco}/<image_stem>.npz`. The `.npz` must contain an `instance_mask` array with one integer ID per pixel. VOC20/21 share `voc`, Context59/60 share `context`, and both COCO configs share `coco`. [Precomputed region masks](https://huggingface.co/datasets/dk258/CorrCLIP/tree/main) are available separately. Datasets and masks are not included in this repository. If your paths differ, edit the corresponding file in `configs/`.
+
+
 `With background class`: PASCAL VOC (VOC21), PASCAL Context (PC60), and COCO Object (Object),
 
 `Without background class`: VOC20, PC59 (i.e., VOC21 and PC60 without the background category), Cityscapes (City), ADE20k (ADE), and COCO Stuff164k (Stuff).
