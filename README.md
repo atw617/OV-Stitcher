@@ -51,10 +51,12 @@ Place the validation datasets under `data/` (or symlink `data` to a prepared dat
 | `cfg_coco_object.py` | `data/coco_object/images/val2017/*.jpg` | `data/coco_object/annotations/val2017/*_instanceTrainIds.png` | — |
 | `cfg_coco_stuff164k.py` | `data/coco_stuff164k/images/val2017/*.jpg` | `data/coco_stuff164k/annotations/val2017/*_labelTrainIds.png` | — |
 
-To create the COCO Object labels from a complete COCO Stuff 164k dataset, run:
+Please follow the data preparation document of [MMSeg](https://github.com/open-mmlab/mmsegmentation/blob/main/docs/en/user_guides/2_dataset_prepare.md) to download and pre-process
+the datasets. Move the datasets to the `data/` directory.
+The COCO Object dataset can be converted from COCO Stuff164k by executing the following command:
 
-```bash
-python datasets/cvt_coco_object.py data/coco_stuff164k -o data/coco_object
+```
+python datasets/cvt_coco_object.py PATH_TO_COCO_STUFF164K -o PATH_TO_COCO164K
 ```
 
 With the default `mask_generator=None`, every validation image also needs a precomputed instance mask at `data/region_masks/{voc,context,ade,city,coco}/<image_stem>.npz`. The `.npz` must contain an `instance_mask` array with one integer ID per pixel. VOC20/21 share `voc`, Context59/60 share `context`, and both COCO configs share `coco`. [Precomputed region masks](https://huggingface.co/datasets/dk258/CorrCLIP/tree/main) are available separately. Datasets and masks are not included in this repository. If your paths differ, edit the corresponding file in `configs/`.
@@ -64,13 +66,6 @@ With the default `mask_generator=None`, every validation image also needs a prec
 
 `Without background class`: VOC20, PC59 (i.e., VOC21 and PC60 without the background category), Cityscapes (City), ADE20k (ADE), and COCO Stuff164k (Stuff).
 
-Please follow the data preparation document of [MMSeg](https://github.com/open-mmlab/mmsegmentation/blob/main/docs/en/user_guides/2_dataset_prepare.md) to download and pre-process
-the datasets. Move the datasets to the `data/` directory.
-The COCO Object dataset can be converted from COCO Stuff164k by executing the following command:
-
-```
-python datasets/cvt_coco_object.py PATH_TO_COCO_STUFF164K -o PATH_TO_COCO164K
-```
 
 ## 📊Results
 <div align="center">
