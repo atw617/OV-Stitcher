@@ -59,13 +59,33 @@ The COCO Object dataset can be converted from COCO Stuff164k by executing the fo
 python datasets/cvt_coco_object.py PATH_TO_COCO_STUFF164K -o PATH_TO_COCO164K
 ```
 
-With the default `mask_generator=None`, every validation image also needs a precomputed instance mask at `data/region_masks/{voc,context,ade,city,coco}/<image_stem>.npz`. The `.npz` must contain an `instance_mask` array with one integer ID per pixel. VOC20/21 share `voc`, Context59/60 share `context`, and both COCO configs share `coco`. [Precomputed region masks](https://huggingface.co/datasets/dk258/CorrCLIP/tree/main) are available separately. Datasets and masks are not included in this repository. If your paths differ, edit the corresponding file in `configs/`.
+With the default `mask_generator=None`, every validation image also needs a precomputed instance mask at `data/region_masks/{voc,context,ade,city,coco}/<image_stem>.npz`. The `.npz` must contain an `instance_mask` array with one integer ID per pixel. VOC20/21 share `voc`, Context59/60 share `context`, and both COCO configs share `coco`. Datasets and masks are not included in this repository. If your paths differ, edit the corresponding file in `configs/`.
 
 
 `With background class`: PASCAL VOC (VOC21), PASCAL Context (PC60), and COCO Object (Object),
 
 `Without background class`: VOC20, PC59 (i.e., VOC21 and PC60 without the background category), Cityscapes (City), ADE20k (ADE), and COCO Stuff164k (Stuff).
 
+
+## Mask Generator Configuration
+
+Set `mask_generator` in [configs/base_config.py](configs/base_config.py). The available modes are `None`, `sam2`, `mask2former`, `entityseg`, and `eomt`; their settings are in [`set_mask_generator`](ov_stitcher_segmentor.py).
+
+### SAM2: precomputed masks
+
+For the evaluation setup used here, use the precomputed SAM2 masks released by CorrCLIP:
+
+1. Keep `mask_generator=None` (the default).
+2. Download [CorrCLIP's `region_masks.zip`](https://huggingface.co/datasets/dk258/CorrCLIP/resolve/main/region_masks.zip?download=true).
+3. Extract it into `data/` so that files appear under `data/region_masks/voc/`, `data/region_masks/context/`, `data/region_masks/ade/`, `data/region_masks/city/`, and `data/region_masks/coco/`.
+
+### SAM2: generate masks during evaluation
+
+1. Install [SAM2](https://github.com/facebookresearch/sam2) and its dependencies.
+2. Download the [SAM2 Hiera Large checkpoint](https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_large.pt) as `sam2_hiera_large.pt` in the repository root.
+3. Set `mask_generator='sam2'` in `configs/base_config.py`. The code uses `sam2_hiera_l.yaml`; change the checkpoint, config, and sampling parameters in `set_mask_generator` if using another model.
+
+The current SAM2 installation requires PyTorch 2.5.1 or newer, while the tested installation above uses 2.1.0. Check the PyTorch, MMCV, and SAM2 versions together before using dynamic generation.
 
 ## Evaluation
 
