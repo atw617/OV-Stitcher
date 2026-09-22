@@ -1,0 +1,24 @@
+# Install CUDA-matched PyTorch first and MMCV separately (see README.md).
+numpy==1.26.4
+Pillow==10.4.0
+PyYAML==6.0.2
+addict==2.4.0
+ftfy==6.2.0
+gradio==5.44.1
+huggingface-hub==0.34.4
+matplotlib==3.7.2
+mmengine==0.10.7
+opencv-python==4.6.0.66
+openpyxl==3.1.2
+packaging==25.0
+prettytable==3.16.0
+regex==2023.8.8
+rich==14.0.0
+safetensors==0.4.3
+scikit-learn==1.7.0
+scipy==1.14.0
+termcolor==3.1.0
+timm==1.0.15
+tqdm==4.66.1
+transformers==4.51.0
+yapf==0.43.0
