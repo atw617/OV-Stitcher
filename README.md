@@ -82,7 +82,7 @@ CUDA_VISIBLE_DEVICES=0,1 bash dist_test.sh configs/cfg_voc21.py 2
 CUDA_VISIBLE_DEVICES=0 python eval_all.py
 ```
 
-Replace `cfg_voc21.py` with any config listed above. Results are saved in `work_dirs/`, `results.xlsx`, and `111.txt`. Model choices and the prompt file are set in `configs/base_config.py`; the default prompt is `prompts/class_biased_template.json`. Alternative mask generators require their own dependencies and weights.
+Replace `cfg_voc21.py` with any config listed above. Results are saved in `work_dirs/`. Model choices and the prompt file are set in `configs/base_config.py`; the default prompt is `prompts/class_biased_template.json`. Alternative mask generators require their own dependencies and weights.
 
 
 ## 📊Results
