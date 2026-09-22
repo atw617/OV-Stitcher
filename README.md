@@ -24,7 +24,7 @@
 > **Abstract**: Training-free open-vocabulary semantic segmentation (TFOVSS) has recently attracted attention for its ability to perform dense prediction by leveraging the pretrained knowledge of large vision and vision–language models, without requiring additional training. However, due to the limited input resolution of these pretrained encoders, existing TFOVSS methods commonly adopt a sliding-window strategy that processes cropped sub-images independently. While effective for managing high-resolution inputs, this approach prevents global attention over the full image, leading to fragmented feature representations and limited contextual reasoning. We propose OV-Stitcher, a training-free framework that addresses this limitation by stitching fragmented sub-image features directly within the final encoder block. By reconstructing attention representations from fragmented sub-image features, OV-Stitcher enables global attention within the final encoder block, producing coherent context aggregation and spatially consistent, semantically aligned segmentation maps. Extensive evaluations across eight benchmarks demonstrate that OV-Stitcher establishes a scalable and effective solution for open-vocabulary segmentation, achieving a notable improvement in mean Intersection over Union (mIoU) from 48.7 to 50.7 compared with prior training-free baselines.
 
 
-## Installation
+## 🔧Installation
 
 Tested on Linux with Python 3.10, PyTorch 2.1.0, CUDA 12.1, and MMCV 2.1.0. From the repository root:
 
@@ -87,7 +87,7 @@ For the evaluation setup used here, use the precomputed SAM2 masks released by C
 
 The current SAM2 installation requires PyTorch 2.5.1 or newer, while the tested installation above uses 2.1.0. Check the PyTorch, MMCV, and SAM2 versions together before using dynamic generation.
 
-## Evaluation
+## 🚀Evaluation
 
 Run these commands from the repository root after preparing the data:
 
