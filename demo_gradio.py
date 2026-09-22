@@ -141,11 +141,11 @@ def process_image(img_path, input_text, segmentation_method, points_per_side, pr
 
 
 example_list = [
-    ["images/Golden Retriever,Husky,background.jpg", "golden retriever,husky,background"],
-    ["images/pikachu,eevee,background.jpg", "pikachu,eevee,background"],
-    ["images/animals.png", "cheetah, zebra, rhinoceros, elephant, buffalo, giraffe, antelope, lion, leopard, background"],
-    ["images/fruit.jpg", "background, banana, pineapple, broccoli, potato, tomato, chili pepper, kiwi, avocado, orange, lemon, strawberry, cherry tomato, parsley, lime"],
-
+    ["samples/Golden Retriever,Husky,background.jpg", "golden retriever,husky,background"],
+    ["samples/cat.jpg", "cat, background"],
+    ["samples/animals.png", "cheetah, zebra, rhinoceros, elephant, buffalo, giraffe, antelope, lion, leopard, background"],
+    ["samples/fruit.jpg", "background, banana, pineapple, broccoli, potato, tomato, chili pepper, kiwi, avocado, orange, lemon, strawberry, cherry tomato, parsley, lime"],
+    ["samples/giraffe.png", "giraffe, tree, grass, mountain, sky"],
 ]
 
 
