@@ -73,7 +73,7 @@ Set `mask_generator` in [configs/base_config.py](configs/base_config.py). The av
 
 ### SAM2: precomputed masks
 
-For the evaluation setup used here, use the precomputed SAM2 masks released by CorrCLIP:
+For the evaluation setup used here, use the precomputed SAM2 masks released by [CorrCLIP](https://github.com/zdk258/CorrCLIP/tree/master/CorrCLIPv1):
 
 1. Keep `mask_generator=None` (the default).
 2. Download [CorrCLIP's `region_masks.zip`](https://huggingface.co/datasets/dk258/CorrCLIP/resolve/main/region_masks.zip?download=true).
